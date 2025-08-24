@@ -1,0 +1,31 @@
+{
+  "inputs": [
+    {
+      "name": "rating",
+      "public": false,
+      "type": "u32"
+    },
+    {
+      "name": "promptHash1",
+      "public": true,
+      "type": "u32"
+    },
+    {
+      "name": "promptHash2",
+      "public": true,
+      "type": "u32"
+    },
+    {
+      "name": "salt",
+      "public": false,
+      "type": "u32"
+    }
+  ],
+  "output": {
+    "type": "array",
+    "components": {
+      "size": 8,
+      "type": "u32"
+    }
+  }
+}
