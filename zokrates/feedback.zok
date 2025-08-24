@@ -1,0 +1,17 @@
+import "hashes/sha256/512bit" as sha256;
+
+// Prove: 1 <= rating <= 5 AND bind to SHA-256(rating, promptHash1, promptHash2, salt, zeros...)
+def main(private u32 rating, u32 promptHash1, u32 promptHash2, private u32 salt) -> u32[8] {
+    assert(rating > 0u32);
+    assert(rating < 6u32);
+
+    u32[16] block = [
+        rating, promptHash1, promptHash2, salt,
+        0u32, 0u32, 0u32, 0u32,
+        0u32, 0u32, 0u32, 0u32,
+        0u32, 0u32, 0u32, 0u32
+    ];
+
+    u32[8] digest = sha256(block[0..8], block[8..16]);
+    return digest;
+}
