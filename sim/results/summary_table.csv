@@ -1,0 +1,4 @@
+Metric,Baseline,AI,Δ (AI−Base),% Change
+Mean Success,4.0,4.0,0.0,0.0
+Final Success,6.0,7.0,1.0,16.666666666666668
+Mean Gas/Sub,1.0,1.0,0.0,0.0

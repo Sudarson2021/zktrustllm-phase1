@@ -1,0 +1,605 @@
+{
+  "contractName": "IVerifier",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "X",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "Y",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct IVerifier.G1Point",
+              "name": "A",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256[2]",
+                  "name": "X",
+                  "type": "uint256[2]"
+                },
+                {
+                  "internalType": "uint256[2]",
+                  "name": "Y",
+                  "type": "uint256[2]"
+                }
+              ],
+              "internalType": "struct IVerifier.G2Point",
+              "name": "B",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "X",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "Y",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct IVerifier.G1Point",
+              "name": "C",
+              "type": "tuple"
+            }
+          ],
+          "internalType": "struct IVerifier.Proof",
+          "name": "proof",
+          "type": "tuple"
+        },
+        {
+          "internalType": "uint256[10]",
+          "name": "input",
+          "type": "uint256[10]"
+        }
+      ],
+      "name": "verifyTx",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"components\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"X\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"Y\",\"type\":\"uint256\"}],\"internalType\":\"struct IVerifier.G1Point\",\"name\":\"A\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"uint256[2]\",\"name\":\"X\",\"type\":\"uint256[2]\"},{\"internalType\":\"uint256[2]\",\"name\":\"Y\",\"type\":\"uint256[2]\"}],\"internalType\":\"struct IVerifier.G2Point\",\"name\":\"B\",\"type\":\"tuple\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"X\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"Y\",\"type\":\"uint256\"}],\"internalType\":\"struct IVerifier.G1Point\",\"name\":\"C\",\"type\":\"tuple\"}],\"internalType\":\"struct IVerifier.Proof\",\"name\":\"proof\",\"type\":\"tuple\"},{\"internalType\":\"uint256[10]\",\"name\":\"input\",\"type\":\"uint256[10]\"}],\"name\":\"verifyTx\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/IVerifier.sol\":\"IVerifier\"},\"evmVersion\":\"shanghai\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/IVerifier.sol\":{\"keccak256\":\"0xed812f486cee783f86fa1b0f116163cb3d35bcd79092fdc6b04a86e3f91f82dc\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://8eb41d55b594af43ab7062a047f39437c41858661db71750dc0c8d8034ef6486\",\"dweb:/ipfs/QmTWHJ3gaivf3UVzq4rRDWwwj1kSxFCaSzBVAHDjdmtjmX\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.20;\n\ninterface IVerifier {\n    struct G1Point { uint X; uint Y; }\n    struct G2Point { uint[2] X; uint[2] Y; }\n    struct Proof { G1Point A; G2Point B; G1Point C; }\n\n    function verifyTx(Proof calldata proof, uint256[10] calldata input) external view returns (bool);\n}\n",
+  "sourcePath": "/home/sk02352/zktrustllm-phase1/contracts/IVerifier.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/IVerifier.sol",
+    "exportedSymbols": {
+      "IVerifier": [
+        59
+      ]
+    },
+    "id": 60,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 22,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".20"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:24:1"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "IVerifier",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 59,
+        "linearizedBaseContracts": [
+          59
+        ],
+        "name": "IVerifier",
+        "nameLocation": "68:9:1",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "IVerifier.G1Point",
+            "id": 27,
+            "members": [
+              {
+                "constant": false,
+                "id": 24,
+                "mutability": "mutable",
+                "name": "X",
+                "nameLocation": "106:1:1",
+                "nodeType": "VariableDeclaration",
+                "scope": 27,
+                "src": "101:6:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 23,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "101:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 26,
+                "mutability": "mutable",
+                "name": "Y",
+                "nameLocation": "114:1:1",
+                "nodeType": "VariableDeclaration",
+                "scope": 27,
+                "src": "109:6:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 25,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "109:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "G1Point",
+            "nameLocation": "91:7:1",
+            "nodeType": "StructDefinition",
+            "scope": 59,
+            "src": "84:34:1",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "IVerifier.G2Point",
+            "id": 36,
+            "members": [
+              {
+                "constant": false,
+                "id": 31,
+                "mutability": "mutable",
+                "name": "X",
+                "nameLocation": "148:1:1",
+                "nodeType": "VariableDeclaration",
+                "scope": 36,
+                "src": "140:9:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_array$_t_uint256_$2_storage_ptr",
+                  "typeString": "uint256[2]"
+                },
+                "typeName": {
+                  "baseType": {
+                    "id": 28,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "140:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 30,
+                  "length": {
+                    "hexValue": "32",
+                    "id": 29,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "number",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "145:1:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_rational_2_by_1",
+                      "typeString": "int_const 2"
+                    },
+                    "value": "2"
+                  },
+                  "nodeType": "ArrayTypeName",
+                  "src": "140:7:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$2_storage_ptr",
+                    "typeString": "uint256[2]"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 35,
+                "mutability": "mutable",
+                "name": "Y",
+                "nameLocation": "159:1:1",
+                "nodeType": "VariableDeclaration",
+                "scope": 36,
+                "src": "151:9:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_array$_t_uint256_$2_storage_ptr",
+                  "typeString": "uint256[2]"
+                },
+                "typeName": {
+                  "baseType": {
+                    "id": 32,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "151:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 34,
+                  "length": {
+                    "hexValue": "32",
+                    "id": 33,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "number",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "156:1:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_rational_2_by_1",
+                      "typeString": "int_const 2"
+                    },
+                    "value": "2"
+                  },
+                  "nodeType": "ArrayTypeName",
+                  "src": "151:7:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$2_storage_ptr",
+                    "typeString": "uint256[2]"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "G2Point",
+            "nameLocation": "130:7:1",
+            "nodeType": "StructDefinition",
+            "scope": 59,
+            "src": "123:40:1",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "IVerifier.Proof",
+            "id": 46,
+            "members": [
+              {
+                "constant": false,
+                "id": 39,
+                "mutability": "mutable",
+                "name": "A",
+                "nameLocation": "191:1:1",
+                "nodeType": "VariableDeclaration",
+                "scope": 46,
+                "src": "183:9:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_G1Point_$27_storage_ptr",
+                  "typeString": "struct IVerifier.G1Point"
+                },
+                "typeName": {
+                  "id": 38,
+                  "nodeType": "UserDefinedTypeName",
+                  "pathNode": {
+                    "id": 37,
+                    "name": "G1Point",
+                    "nameLocations": [
+                      "183:7:1"
+                    ],
+                    "nodeType": "IdentifierPath",
+                    "referencedDeclaration": 27,
+                    "src": "183:7:1"
+                  },
+                  "referencedDeclaration": 27,
+                  "src": "183:7:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_G1Point_$27_storage_ptr",
+                    "typeString": "struct IVerifier.G1Point"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 42,
+                "mutability": "mutable",
+                "name": "B",
+                "nameLocation": "202:1:1",
+                "nodeType": "VariableDeclaration",
+                "scope": 46,
+                "src": "194:9:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_G2Point_$36_storage_ptr",
+                  "typeString": "struct IVerifier.G2Point"
+                },
+                "typeName": {
+                  "id": 41,
+                  "nodeType": "UserDefinedTypeName",
+                  "pathNode": {
+                    "id": 40,
+                    "name": "G2Point",
+                    "nameLocations": [
+                      "194:7:1"
+                    ],
+                    "nodeType": "IdentifierPath",
+                    "referencedDeclaration": 36,
+                    "src": "194:7:1"
+                  },
+                  "referencedDeclaration": 36,
+                  "src": "194:7:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_G2Point_$36_storage_ptr",
+                    "typeString": "struct IVerifier.G2Point"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 45,
+                "mutability": "mutable",
+                "name": "C",
+                "nameLocation": "213:1:1",
+                "nodeType": "VariableDeclaration",
+                "scope": 46,
+                "src": "205:9:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_G1Point_$27_storage_ptr",
+                  "typeString": "struct IVerifier.G1Point"
+                },
+                "typeName": {
+                  "id": 44,
+                  "nodeType": "UserDefinedTypeName",
+                  "pathNode": {
+                    "id": 43,
+                    "name": "G1Point",
+                    "nameLocations": [
+                      "205:7:1"
+                    ],
+                    "nodeType": "IdentifierPath",
+                    "referencedDeclaration": 27,
+                    "src": "205:7:1"
+                  },
+                  "referencedDeclaration": 27,
+                  "src": "205:7:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_G1Point_$27_storage_ptr",
+                    "typeString": "struct IVerifier.G1Point"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "Proof",
+            "nameLocation": "175:5:1",
+            "nodeType": "StructDefinition",
+            "scope": 59,
+            "src": "168:49:1",
+            "visibility": "public"
+          },
+          {
+            "functionSelector": "11bfe45a",
+            "id": 58,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "verifyTx",
+            "nameLocation": "232:8:1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 54,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 49,
+                  "mutability": "mutable",
+                  "name": "proof",
+                  "nameLocation": "256:5:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 58,
+                  "src": "241:20:1",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_Proof_$46_calldata_ptr",
+                    "typeString": "struct IVerifier.Proof"
+                  },
+                  "typeName": {
+                    "id": 48,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 47,
+                      "name": "Proof",
+                      "nameLocations": [
+                        "241:5:1"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 46,
+                      "src": "241:5:1"
+                    },
+                    "referencedDeclaration": 46,
+                    "src": "241:5:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Proof_$46_storage_ptr",
+                      "typeString": "struct IVerifier.Proof"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 53,
+                  "mutability": "mutable",
+                  "name": "input",
+                  "nameLocation": "284:5:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 58,
+                  "src": "263:26:1",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$10_calldata_ptr",
+                    "typeString": "uint256[10]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 50,
+                      "name": "uint256",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "263:7:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 52,
+                    "length": {
+                      "hexValue": "3130",
+                      "id": 51,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "271:2:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_10_by_1",
+                        "typeString": "int_const 10"
+                      },
+                      "value": "10"
+                    },
+                    "nodeType": "ArrayTypeName",
+                    "src": "263:11:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$10_storage_ptr",
+                      "typeString": "uint256[10]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "240:50:1"
+            },
+            "returnParameters": {
+              "id": 57,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 56,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 58,
+                  "src": "314:4:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 55,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "314:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "313:6:1"
+            },
+            "scope": 59,
+            "src": "223:97:1",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 60,
+        "src": "58:264:1",
+        "usedErrors": [],
+        "usedEvents": []
+      }
+    ],
+    "src": "32:291:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.20+commit.a1b79de6.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.16",
+  "updatedAt": "2025-09-02T10:43:41.260Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
