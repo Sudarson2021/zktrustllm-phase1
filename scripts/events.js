@@ -1,20 +1,10 @@
-const ReputationWithZK = artifacts.require("ReputationWithZK");
-
-module.exports = async function (cb) {
+module.exports = async function (callback) {
   try {
-    const rep = await ReputationWithZK.deployed();
-    const events = await rep.getPastEvents("FeedbackSubmitted", {
-      fromBlock: 0,
-      toBlock: "latest",
-    });
-    console.log(`Found ${events.length} FeedbackSubmitted events`);
-    for (const ev of events) {
-      const { model, user, scoreHash } = ev.returnValues;
-      console.log(`block=${ev.blockNumber} tx=${ev.transactionHash}`);
-      console.log(`  model=${model}`);
-      console.log(`  user=${user}`);
-      console.log(`  scoreHash=${scoreHash}\n`);
-    }
-    cb();
-  } catch (e) { console.error(e); cb(e); }
-};
+    const Reputation = artifacts.require("ReputationWithZK");
+    const instance = await Reputation.deployed();
+    const evs = await instance.getPastEvents('allEvents', { fromBlock: 0, toBlock: 'latest' });
+    if (evs.length === 0) { console.log("(no events)"); }
+    evs.forEach(ev => console.log(`#${ev.blockNumber} ${ev.event} →`, ev.returnValues));
+  } catch (e) { console.error(e); }
+  callback();
+}
