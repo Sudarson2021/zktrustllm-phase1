@@ -1,0 +1,5 @@
+{"id": 1, "question": "What is the capital of France?", "ground_truth_answer": "Paris", "vicuna-13b-v1.3": "Paris", "llama-2-13b": "Paris, France.", "alpaca-13b": "The capital is Paris."}
+{"id": 2, "question": "2+2 equals?", "ground_truth_answer": "4", "vicuna-13b-v1.3": "4", "llama-2-13b": "Four", "alpaca-13b": "The answer is 5."}
+{"id": 3, "question": "Name a primary color.", "ground_truth_answer": "red", "vicuna-13b-v1.3": "red", "llama-2-13b": "blue", "alpaca-13b": "green"}
+{"id": 4, "question": "Who wrote Hamlet?", "ground_truth_answer": "William Shakespeare", "vicuna-13b-v1.3": "Shakespeare", "llama-2-13b": "William Shakespeare", "alpaca-13b": "Shakespear"}
+{"id": 5, "question": "What gas do plants primarily absorb for photosynthesis?", "ground_truth_answer": "carbon dioxide", "vicuna-13b-v1.3": "carbon dioxide", "llama-2-13b": "CO2", "alpaca-13b": "oxygen"}
