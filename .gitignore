@@ -1,42 +1,21 @@
+# Dependencies / build
+node_modules/
+dist/
+.cache/
+artifacts/
+coverage/
+
+# Local env & secrets
+.env
+.env.*
+!.env.example
+.secrets/
+
+# Outputs / datasets / bundles
+outputs/
+outputs_human/
+
 # OS / editor
 .DS_Store
 *.swp
-*.swo
-
-# Python
-__pycache__/
-*.pyc
-.venv/
-omnetpp-venv/
-.omnetpp-venv/
-
-# Node
-bridge/node_modules/
-bridge/.env
-npm-debug.log*
-
-# OMNeT++ build artifacts
-sim/out/
-sim/src/Makefile
-*.o
-*.d
-*.so
-
-# Raw simulation outputs (can be big); keep curated paper artifacts
-sim/results/*.vec
-sim/results/*.vci
-sim/results/*.sca
-
-# Keep curated results and figures for the paper
-!sim/results/*paper*.csv
-!sim/results/*paper*.png
-!sim/results/*paper*.pdf
-!sim/results/*paper*.svg
-!sim/results/summary_table*.*
-!sim/results/all_series.csv
-!sim/results/vectors.csv
-
-# Local chain / misc
-chaindata/
-.env.local
-.secrets/
+*.tmp
