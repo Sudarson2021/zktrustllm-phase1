@@ -1,0 +1,88 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "MockVerifier",
+  "sourceName": "contracts/MockVerifier.sol",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "X",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "Y",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct IVerifier.G1Point",
+              "name": "A",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256[2]",
+                  "name": "X",
+                  "type": "uint256[2]"
+                },
+                {
+                  "internalType": "uint256[2]",
+                  "name": "Y",
+                  "type": "uint256[2]"
+                }
+              ],
+              "internalType": "struct IVerifier.G2Point",
+              "name": "B",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "X",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "Y",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct IVerifier.G1Point",
+              "name": "C",
+              "type": "tuple"
+            }
+          ],
+          "internalType": "struct IVerifier.Proof",
+          "name": "",
+          "type": "tuple"
+        },
+        {
+          "internalType": "uint256[10]",
+          "name": "",
+          "type": "uint256[10]"
+        }
+      ],
+      "name": "verifyTx",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b5061016b806100206000396000f3fe608060405234801561001057600080fd5b506004361061002b5760003560e01c806311bfe45a14610030575b600080fd5b61004a600480360381019061004591906100bd565b610060565b604051610057919061011a565b60405180910390f35b60006001905092915050565b600080fd5b600080fd5b6000610100828403121561008d5761008c610071565b5b81905092915050565b600080fd5b6000819050826020600a02820111156100b7576100b6610096565b5b92915050565b60008061024083850312156100d5576100d461006c565b5b60006100e385828601610076565b9250506101006100f58582860161009b565b9150509250929050565b60008115159050919050565b610114816100ff565b82525050565b600060208201905061012f600083018461010b565b9291505056fea2646970667358221220865da3650ec82c4152f215f69d8159930903b37b5ffcfe38fe0fbcbccc6420b364736f6c63430008140033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061002b5760003560e01c806311bfe45a14610030575b600080fd5b61004a600480360381019061004591906100bd565b610060565b604051610057919061011a565b60405180910390f35b60006001905092915050565b600080fd5b600080fd5b6000610100828403121561008d5761008c610071565b5b81905092915050565b600080fd5b6000819050826020600a02820111156100b7576100b6610096565b5b92915050565b60008061024083850312156100d5576100d461006c565b5b60006100e385828601610076565b9250506101006100f58582860161009b565b9150509250929050565b60008115159050919050565b610114816100ff565b82525050565b600060208201905061012f600083018461010b565b9291505056fea2646970667358221220865da3650ec82c4152f215f69d8159930903b37b5ffcfe38fe0fbcbccc6420b364736f6c63430008140033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

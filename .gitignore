@@ -38,3 +38,5 @@ sim/results/*.sca
 
 # Local chain / misc
 chaindata/
+.env.local
+.secrets/
