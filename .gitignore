@@ -15,7 +15,13 @@ coverage/
 outputs/
 outputs_human/
 
-# OS / editor
+# Python venv
+.venv/
+
+# Sim outputs / sources
+sim/
+
+# OS / editor junk
 .DS_Store
 *.swp
 *.tmp
