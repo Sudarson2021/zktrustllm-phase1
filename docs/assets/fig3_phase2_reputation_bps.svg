@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450">
+  <style>
+    .title{font: bold 20px sans-serif}
+    .axis{font: 12px sans-serif; fill:#333}
+    .label{font: 13px sans-serif; fill:#000}
+    .tick{stroke:#aaa; stroke-width:1}
+    .barLabel{font: 12px sans-serif; fill:#000}
+  </style>
+  <rect x="0" y="0" width="800" height="450" fill="#fff"/>
+  <text x="400" y="30" text-anchor="middle" class="title">Phase-2 Reputation by Model (basis points)</text>
+
+  <line x1="80" y1="380" x2="760" y2="380" stroke="#333"/>
+  <line x1="80" y1="60"  x2="80"  y2="380" stroke="#333"/>
+
+  <!-- y ticks 0..100 (treat 1 bps = 1 unit for visualization) -->
+  <line x1="80" y1="60" x2="760" y2="60" class="tick"/>
+  <text x="70" y="64" text-anchor="end" class="axis">100</text>
+  <line x1="80" y1="185" x2="760" y2="185" class="tick"/>
+  <text x="70" y="189" text-anchor="end" class="axis">50</text>
+  <text x="70" y="384" text-anchor="end" class="axis">0</text>
+
+  <!-- bars: 91 for models 1..3 (height = 91*3.2 = 291.2) -->
+  <rect x="220" y="88.8" width="100" height="291.2" fill="#6aaee6"/>
+  <text x="270" y="83" text-anchor="middle" class="barLabel">91</text>
+  <text x="270" y="410" text-anchor="middle" class="label">Model 1</text>
+
+  <rect x="360" y="88.8" width="100" height="291.2" fill="#8ecae6"/>
+  <text x="410" y="83" text-anchor="middle" class="barLabel">91</text>
+  <text x="410" y="410" text-anchor="middle" class="label">Model 2</text>
+
+  <rect x="500" y="88.8" width="100" height="291.2" fill="#b0d57a"/>
+  <text x="550" y="83" text-anchor="middle" class="barLabel">91</text>
+  <text x="550" y="410" text-anchor="middle" class="label">Model 3</text>
+
+  <text x="420" y="440" text-anchor="middle" class="axis">Reputation (bps, visualized on 0–100 scale)</text>
+</svg>

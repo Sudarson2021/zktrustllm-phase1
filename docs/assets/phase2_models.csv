@@ -1,0 +1,4 @@
+modelId,autoScore,humanScore,weight,reputation_bps,lastUpdated_epoch,evidenceURI
+1,92,90,99,91,1758224796,"dataset:EvalSet_v1;note:Phase 2 KPI demo evidence"
+2,92,90,99,91,1758224990,"dataset:EvalSet_v1;note:Phase 2 KPI demo evidence"
+3,92,90,99,91,1758224992,"dataset:EvalSet_v1;note:Phase 2 KPI demo evidence"
