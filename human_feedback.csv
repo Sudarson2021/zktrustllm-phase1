@@ -1,0 +1,8 @@
+model,humanScore_0_100
+fastchat-t5-3b-v1,55
+koala-13b,58
+llama-2-13b,62
+alpaca-13b,40
+vicuna-7b-v1.5,68
+chatglm-6b,50
+vicuna-13b-v1.3,75
