@@ -1,21 +1,25 @@
-# Node
+# deps
 node_modules/
-npm-debug.log*
-yarn.lock
-pnpm-lock.yaml
-
-# Truffle / build artifacts
 build/
-artifacts/
-cache/
 
-# OS/editor
+# truffle build (keep ABI/bytecode out of git)
+build/contracts/
+
+# circom/snarkjs artifacts
+build-circuits/
+*.r1cs
+*.sym
+*.wasm
+*.wtns
+*.ptau
+*.zkey
+vk.json
+proof.json
+public.json
+
+# local evidence/test files
+evidence.bin
+
+# OS/editor junk
 .DS_Store
-.vscode/
-.idea/
-
-# Local env & misc
-.env
-.env.*
-*.local
-state-dump.json
+*.log
