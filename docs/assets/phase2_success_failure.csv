@@ -1,0 +1,4 @@
+model,success_pct,failure_pct,basis
+Model_1,92,8,autoScore as success
+Model_2,92,8,autoScore as success
+Model_3,92,8,autoScore as success

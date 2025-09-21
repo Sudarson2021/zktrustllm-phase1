@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="520" viewBox="0 0 1100 520" role="img" aria-label="On-chain Data Model">
+  <style>
+    .title { font: 700 28px system-ui, -apple-system, Segoe UI, Roboto, Arial; }
+    .box   { fill:#fff; stroke:#94a3b8; stroke-width:2; rx:10 }
+    .h     { font: 600 18px system-ui, -apple-system, Segoe UI, Roboto, Arial; }
+    .t     { font: 14px system-ui, -apple-system, Segoe UI, Roboto, Arial; fill:#333 }
+    .rel   { stroke:#64748b; stroke-width:2; marker-end:url(#m) }
+  </style>
+  <defs>
+    <marker id="m" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <text x="30" y="40" class="title">On-chain Data Model (simplified)</text>
+
+  <rect class="box" x="60" y="90" width="360" height="160"/>
+  <text class="h" x="80" y="120">Model (modelId → struct)</text>
+  <text class="t" x="80" y="150">name : string</text>
+  <text class="t" x="80" y="175">owner : address</text>
+  <text class="t" x="80" y="200">exists : bool</text>
+
+  <rect class="box" x="580" y="90" width="460" height="160"/>
+  <text class="h" x="600" y="120">Scores (modelId → struct)</text>
+  <text class="t" x="600" y="150">autoScore : uint64 (0..100)</text>
+  <text class="t" x="600" y="175">humanScore : uint64 (0..100)</text>
+  <text class="t" x="600" y="200">weight : uint64 (0..100)</text>
+  <text class="t" x="600" y="225">lastUpdated : uint64 (epoch)</text>
+  <text class="t" x="600" y="250">evidenceURI : string</text>
+
+  <rect class="box" x="60" y="300" width="360" height="160"/>
+  <text class="h" x="80" y="330">Reputation (derived)</text>
+  <text class="t" x="80" y="360">reputation(modelId) → uint</text>
+  <text class="t" x="80" y="385">decayBpsPerDay : uint</text>
+
+  <line class="rel" x1="420" y1="170" x2="580" y2="170"/>
+  <line class="rel" x1="520" y1="300" x2="580" y2="250"/>
+</svg>

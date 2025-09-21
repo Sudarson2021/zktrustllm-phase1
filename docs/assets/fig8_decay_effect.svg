@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="460" viewBox="0 0 1200 460" role="img" aria-label="Reputation decay">
+  <style>
+    .title { font: 700 28px system-ui, -apple-system; }
+    .axis  { font: 14px system-ui, -apple-system; fill:#333 }
+    .tick  { stroke:#e5e7eb }
+    .line  { fill:none; stroke:#2563eb; stroke-width:3 }
+    .pt    { fill:#1d4ed8 }
+  </style>
+  <text x="30" y="40" class="title">Reputation Decay (start 91 bps, −50 bps/day)</text>
+
+  <g transform="translate(80,70)">
+    <!-- grid -->
+    <g>
+      <line class="tick" x1="0" y1="0" x2="1000" y2="0"/>
+      <line class="tick" x1="0" y1="100" x2="1000" y2="100"/>
+      <line class="tick" x1="0" y1="200" x2="1000" y2="200"/>
+      <line class="tick" x1="0" y1="300" x2="1000" y2="300"/>
+    </g>
+    <!-- axes labels -->
+    <text class="axis" x="-50" y="300" alignment-baseline="middle">0</text>
+    <text class="axis" x="-60" y="200" alignment-baseline="middle">30</text>
+    <text class="axis" x="-60" y="100" alignment-baseline="middle">60</text>
+    <text class="axis" x="-60" y="0"   alignment-baseline="middle">90</text>
+    <text class="axis" x="0" y="330">Day 0</text>
+    <text class="axis" x="250" y="330">Day 5</text>
+    <text class="axis" x="500" y="330">Day 10</text>
+    <text class="axis" x="750" y="330">Day 15</text>
+
+    <!-- polyline points: day (x) vs rep (y=300−rep*3.33) -->
+    <polyline class="line" points="
+      0,0
+      166,16.5
+      333,33
+      500,49.5
+      666,66
+      833,82.5
+      1000,99
+    "/>
+    <!-- points -->
+    <circle class="pt" cx="0"   cy="0"    r="4"/>
+    <circle class="pt" cx="333" cy="33"   r="4"/>
+    <circle class="pt" cx="666" cy="66"   r="4"/>
+    <circle class="pt" cx="1000" cy="99"  r="4"/>
+  </g>
+</svg>

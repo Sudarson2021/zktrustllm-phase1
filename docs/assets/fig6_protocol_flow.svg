@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-label="Protocol Flow">
+  <style>
+    .title { font: 700 28px system-ui, -apple-system, Segoe UI, Roboto, Arial; }
+    .lane  { font: 16px system-ui, -apple-system, Segoe UI, Roboto, Arial; }
+    .box   { fill:#f1f5f9; stroke:#cbd5e1; rx:10 }
+    .arrow { stroke:#334155; stroke-width:2; marker-end:url(#m) }
+    .note  { font: 13px system-ui, -apple-system, Segoe UI, Roboto, Arial; fill:#555 }
+  </style>
+  <defs>
+    <marker id="m" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#334155"/>
+    </marker>
+  </defs>
+
+  <text x="30" y="40" class="title">Protocol Flow — Phase-1 (feedback) & Phase-2 (KPI oracle)</text>
+
+  <!-- Swimlanes -->
+  <text class="lane" x="60"  y="80">Client</text>
+  <text class="lane" x="460" y="80">Contracts</text>
+  <text class="lane" x="860" y="80">Oracle</text>
+
+  <!-- Phase-1 -->
+  <rect class="box" x="40"  y="110" width="300" height="60"/>
+  <text x="60" y="145">1) SubmitFeedback(score, reveal)</text>
+  <line class="arrow" x1="340" y1="140" x2="460" y2="140"/>
+  <rect class="box" x="460" y="110" width="300" height="60"/>
+  <text x="480" y="145">ReputationBasic/WithZK updates state</text>
+
+  <!-- Phase-2 -->
+  <rect class="box" x="840" y="110" width="300" height="60"/>
+  <text x="860" y="145">2) ScoresSubmitted(modelId, auto,human,weight,uri)</text>
+  <line class="arrow" x1="840" y1="170" x2="760" y2="210"/>
+  <rect class="box" x="460" y="200" width="300" height="60"/>
+  <text x="480" y="235">LLMReputation recomputes reputation</text>
+
+  <!-- Reads -->
+  <rect class="box" x="40"  y="290" width="300" height="60"/>
+  <text x="60" y="325">3) Off-chain reads (events & views)</text>
+  <line class="arrow" x1="340" y1="320" x2="460" y2="320"/>
+  <rect class="box" x="460" y="290" width="300" height="60"/>
+  <text x="480" y="325">listEvents(), scores(), reputation()</text>
+
+  <text class="note" x="40" y="380">All concrete TXs shown in repo logs; evidenceURI points to dataset/notes (see docs/assets/phase2_models.csv).</text>
+</svg>
