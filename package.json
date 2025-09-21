@@ -6,7 +6,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "ganache": "ganache -d -p 8545",
     "deploy": "hardhat run scripts/deploy.js --network localhost",
-    "demo": "hardhat run scripts/demo.js --network localhost"
+    "demo": "hardhat run scripts/demo.js --network localhost",
+    "zk:inspect": "truffle exec scripts/inspect_zk.js --network development",
+    "zk:submit": "truffle exec scripts/v3_submit_zk.js --network development -- proof.json public.json evidence.bin"
   },
   "keywords": [],
   "author": "",
@@ -15,7 +17,10 @@
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^6.1.0",
     "ganache": "^7.9.2",
-    "hardhat": "^2.26.3"
+    "hardhat": "^2.26.3",
+    "snarkjs": "^0.7.5",
+    "truffle": "^5.11.5",
+    "web3": "^4.16.0"
   },
   "dependencies": {
     "@openzeppelin/contracts": "^5.4.0"

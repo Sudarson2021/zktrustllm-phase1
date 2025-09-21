@@ -24,3 +24,17 @@ evidence.bin
 .DS_Store
 *.log
 .env
+# local envs / venvs
+.env.local
+.venv/
+
+# local circom compiler checkout (you built circom from source here)
+circom/
+
+# local sims, scratch, tgz bundles, stray address files
+sim/
+zktrustllm-demo-artifacts.tgz
+0x9b1f7F*
+
+# example input used for witness generation
+circuits/input_example.json
