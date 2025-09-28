@@ -1,0 +1,17 @@
+name: Phase4 CI
+on:
+  push:
+    branches: [ phase4-hardhat, phase4-no-ci ]
+  pull_request:
+    branches: [ main, master ]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - run: npx hardhat compile
+      - run: npm test
