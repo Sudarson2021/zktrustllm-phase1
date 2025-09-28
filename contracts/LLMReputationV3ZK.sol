@@ -38,6 +38,12 @@ contract LLMReputationV3ZK {
     }
     mapping(uint256 => Score) public scores;
 
+    function hasScore(uint256 modelId) external view returns (bool) {
+        Score memory s = scores[modelId];
+        return bytes(s.evidenceURI).length != 0 || s.evidenceHash != bytes32(0);
+    }
+
+
     event ScoreSubmitted(
         uint256 indexed modelId,
         uint64 autoScore,
@@ -89,5 +95,18 @@ contract LLMReputationV3ZK {
         emit ScoreSubmitted(
             modelId, autoScore, humanScore, weight, evidenceURI, evidenceHash
         );
+    }
+    // Returns tuple + a boolean indicating if a score exists
+    function getScore(uint256 modelId) external view returns (
+        bool exists,
+        uint64 autoScore,
+        uint64 humanScore,
+        uint64 weight,
+        string memory evidenceURI,
+        bytes32 evidenceHash
+    ) {
+        Score memory s = scores[modelId];
+        exists = bytes(s.evidenceURI).length != 0 || s.evidenceHash != bytes32(0);
+        return (exists, s.autoScore, s.humanScore, s.weight, s.evidenceURI, s.evidenceHash);
     }
 }

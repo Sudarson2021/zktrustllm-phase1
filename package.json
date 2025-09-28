@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "hardhat test",
     "clean": "rm -rf cache artifacts",
     "compile": "npx hardhat compile",
     "node": "npx hardhat node",
@@ -15,10 +15,12 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@nomicfoundation/hardhat-chai-matchers": "^2.1.0",
     "@nomicfoundation/hardhat-ethers": "3.1.0",
     "@openzeppelin/contracts": "5.0.2",
+    "chai": "^4.5.0",
     "dotenv": "16.4.5",
-    "ethers": "6.13.2",
-    "hardhat": "2.26.4"
+    "ethers": "^6.15.0",
+    "hardhat": "2.26.3"
   }
 }
