@@ -9,7 +9,10 @@
     "compile": "npx hardhat compile",
     "node": "npx hardhat node",
     "deploy": "npx hardhat run scripts/deploy.js --network hardhat",
-    "demo": "npx hardhat run scripts/demo.js --network hardhat"
+    "demo": "npx hardhat run scripts/demo.js --network hardhat",
+    "read:raw": "hardhat run scripts/read-raw.js --network localhost",
+    "read:eff": "hardhat run scripts/read-effective.js --network localhost",
+    "set:hl": "hardhat run scripts/set-halflife.js --network localhost"
   },
   "keywords": [],
   "author": "",
@@ -19,7 +22,7 @@
     "@nomicfoundation/hardhat-ethers": "3.1.0",
     "@openzeppelin/contracts": "5.0.2",
     "chai": "^4.5.0",
-    "dotenv": "16.4.5",
+    "dotenv": "^16.4.5",
     "ethers": "^6.15.0",
     "hardhat": "2.26.3"
   }
