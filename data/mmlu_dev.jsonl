@@ -1,0 +1,3 @@
+{"id":"mmlu-0001","question":"What is 2+2?","options":["A) 3","B) 4","C) 5","D) 22"],"gold":"B"}
+{"id":"mmlu-0002","question":"Capital of France?","options":["A) Paris","B) Berlin","C) Rome","D) Madrid"],"gold":"A"}
+{"id":"mmlu-0003","question":"H2O is","options":["A) Oxygen","B) Hydrogen","C) Water","D) Helium"],"gold":"C"}

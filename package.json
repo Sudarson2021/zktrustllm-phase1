@@ -6,7 +6,13 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "ganache": "ganache -d -p 8545",
     "deploy": "hardhat run scripts/deploy.js --network localhost",
-    "demo": "hardhat run scripts/demo.js --network localhost"
+    "demo": "hardhat run scripts/demo.js --network localhost",
+    "gen:mmlu": "MODEL=gpt-4o-mini DATA=data/mmlu_dev.jsonl OUT=outputs_openai/mmlu_answers.jsonl node scripts/gen_answers_openai.mjs",
+    "score:mmlu": "node scripts/score_mcq.js --file outputs_openai/mmlu_answers.jsonl",
+    "evidence:mmlu": "node -e \"const fs=require('fs'); fs.writeFileSync('outputs_openai/evidence_openai.json', JSON.stringify({model:'gpt-4o-mini',temperature:0,dataset:'data/mmlu_dev.jsonl',answers:'outputs_openai/mmlu_answers.jsonl',metric:'accuracy',protocol:'MCQ letter-only',timestamp:new Date().toISOString()},null,2))\"",
+    "ipfs:mmlu": "ipfs add -q outputs_openai/evidence_openai.json",
+    "phase5:submit": "RATING=${RATING:-80} WEIGHT=100 EVIDENCE=outputs_openai/evidence_openai.json npx hardhat run scripts/zk_submit_with_evidence.js --network localhost",
+    "phase5:report": "npx hardhat run scripts/report.js --network localhost"
   },
   "keywords": [],
   "author": "",
@@ -18,7 +24,9 @@
     "hardhat": "^2.26.3"
   },
   "dependencies": {
-    "@openzeppelin/contracts": "^5.4.0"
+    "@openzeppelin/contracts": "^5.4.0",
+    "openai": "^6.1.0",
+    "p-limit": "^7.1.1"
   },
   "directories": {
     "test": "test"

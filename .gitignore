@@ -1,21 +1,28 @@
 # Node
 node_modules/
 npm-debug.log*
-yarn.lock
-pnpm-lock.yaml
+package-lock.json
 
-# Truffle / build artifacts
-build/
-artifacts/
+# Python / pipx
+.venv/
+__pycache__/
+*.pyc
+
+# Local services / caches
+.ollama/           # if you ever bind a local cache here
+outputs_openai/
+outputs_ollama/
+.ipynb_checkpoints/
+
+# Hardhat/coverage
 cache/
+artifacts/
+coverage/
 
-# OS/editor
-.DS_Store
-.vscode/
-.idea/
-
-# Local env & misc
+# Env / keys
 .env
-.env.*
-*.local
-state-dump.json
+.env.local
+.env.*.local
+
+# IPFS local repo (don’t commit)
+.ipfs/

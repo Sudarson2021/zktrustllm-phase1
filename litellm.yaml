@@ -1,0 +1,14 @@
+model_list:
+  # Map your existing script name "gpt-4o-mini" to the local Ollama model
+  - model_name: gpt-4o-mini
+    litellm_params:
+      model: ollama/phi3:mini
+      api_base: http://127.0.0.1:11434
+      temperature: 0
+      top_p: 1
+
+  # (optional) another alias example
+  - model_name: mistral-small
+    litellm_params:
+      model: ollama/mistral:7b-instruct
+      api_base: http://127.0.0.1:11434

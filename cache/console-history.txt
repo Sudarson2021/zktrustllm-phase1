@@ -1,0 +1,558 @@
+if (evs.length) console.log("last:", evs.at(-1).args);
+console.log("FeedbackSubmitted:", evs.length);
+const evs = await rz.queryFilter("FeedbackSubmitted", 0, "latest");
+console.log("avg:",   (await rz.getAverage(subject)).toString());
+console.log("sum:",   (await rz.reputationSum(subject)).toString());
+console.log("count:", (await rz.feedbackCount(subject)).toString());
+const subject = s1.address;
+const [_, s1] = await ethers.getSigners();
+const rz = await ethers.getContractAt("ReputationWithZK", process.env.ZK_REP_ADDR);
+console.log({ autoBP, humanBP, weightBP });
+const [autoBP, humanBP, weightBP] = await rm.getReputationBP(id);
+await (await rm.postAutoScore(id, 7800)).wait();  // 78.00%
+}
+  await (await rm.grantRole(ORACLE_ROLE, signer0.address)).wait();
+if (!(await rm.hasRole(ORACLE_ROLE, signer0.address))) {
+const ORACLE_ROLE = await rm.ORACLE_ROLE();
+const [signer0] = await ethers.getSigners();
+const id = ethers.encodeBytes32String("1");
+const rm = await ethers.getContractAt("ReputationManager", process.env.REP_ADDR);
+console.log("AutoScorePosted count:", evs.length);
+const evs = await rm.queryFilter("AutoScorePosted", 0, "latest");
+console.log("Phase2:", r);
+const r = await rm.getReputationBP(id);
+// read + show events
+await (await rm.connect(signer1).postAutoScore(id, 7600)).wait();
+}
+  await (await rm.grantRole(ORACLE_ROLE, signer1.address)).wait();
+if (!(await rm.hasRole(ORACLE_ROLE, signer1.address))) {
+// grant ORACLE_ROLE to signer1 then post 76.00%
+const ORACLE_ROLE = await rm.ORACLE_ROLE();
+const [_, signer1] = await ethers.getSigners();
+const id = ethers.encodeBytes32String("1");
+const rm = await ethers.getContractAt("ReputationManager", process.env.REP_ADDR);
+console.log({ autoBP, humanBP, weightBP });
+let [autoBP, humanBP, weightBP] = await rm.getReputationBP(id);
+// read back (autoBP, humanBP, weightBP)
+await (await rm.postAutoScore(id, 7800)).wait();
+// write 78.00% = 7800 basis points
+}
+  await (await rm.grantRole(ORACLE_ROLE, signer0.address)).wait();
+if (!(await rm.hasRole(ORACLE_ROLE, signer0.address))) {
+const ORACLE_ROLE = await rm.ORACLE_ROLE();
+const [signer0] = await ethers.getSigners();
+// make sure we can write
+const id = ethers.encodeBytes32String("1");
+const rm = await ethers.getContractAt("ReputationManager", process.env.REP_ADDR);
+console.log("FeedbackSubmitted count:", evs.length);
+const evs = await rm.queryFilter("FeedbackSubmitted", 0, "latest");
+// event check
+console.log("last feedback:", await rm.feedbacks(subject, idx));
+const idx = (await rm.feedbackCount(subject)) - 1n;
+// details of last feedback
+console.log("avg   =", (await rm.getAverage(subject)).toString());
+console.log("sum   =", (await rm.reputationSum(subject)).toString());
+console.log("count =", (await rm.feedbackCount(subject)).toString());
+// read back
+await (await rm.submitFeedbackZK(subject, [a,b,c], input, 80n, 10n)).wait();
+// rating/weight are uint256 (use BigInt)
+const input = Array(10).fill(0n);
+const c = [0n, 0n];
+const b = [[0n, 0n],[0n, 0n]];
+const a = [0n, 0n];
+// mock Groth16 proof shapes
+const subject = signer1.address;
+const [signer0, signer1] = await ethers.getSigners();
+// pick a subject address (e.g., signer1)
+const rm = await ethers.getContractAt("ReputationWithZK", process.env.ZK_REP_ADDR);
+console.log("FeedbackSubmitted count:", evs.length);
+const evs = await rm.queryFilter("FeedbackSubmitted", 0, "latest");
+// event check
+console.log("last feedback:", await rm.feedbacks(subject, idx));
+const idx = (await rm.feedbackCount(subject)) - 1n;
+// details of last feedback
+console.log("avg   =", (await rm.getAverage(subject)).toString());
+console.log("sum   =", (await rm.reputationSum(subject)).toString());
+console.log("count =", (await rm.feedbackCount(subject)).toString());
+// read back
+await (await rm.submitFeedbackZK(subject, [a,b,c], input, 80n, 10n)).wait();
+// rating/weight are uint256 (use BigInt)
+const input = Array(10).fill(0n);
+const c = [0n, 0n];
+const b = [[0n, 0n],[0n, 0n]];
+const a = [0n, 0n];
+// mock Groth16 proof shapes
+const subject = signer1.address;
+const [signer0, signer1] = await ethers.getSigners();
+// pick a subject address (e.g., signer1)
+const rm = await ethers.getContractAt("ReputationWithZK", process.env.ZK_REP_ADDR);
+console.log("ZK_REP_ADDR   =", await rmZK.getAddress());
+const rmZK = await ZK.deploy(await verifier.getAddress()); await rmZK.waitForDeployment();
+const ZK = await ethers.getContractFactory("ReputationWithZK");
+// 2) ZK manager
+console.log("VERIFIER_ADDR =", await verifier.getAddress());
+const verifier = await Verifier.deploy(); await verifier.waitForDeployment();
+const Verifier = await ethers.getContractFactory("MockVerifier");
+// 1) Verifier
+)
+  uint256 weight
+  uint256 rating,
+  uint256[10] input,
+  ((uint256,uint256),(uint256[2],uint256[2]),(uint256,uint256)) proof,
+  address subject,
+submitFeedbackZK(
+console.log("AutoScorePosted count:", evs.length);
+const evs = await rm.queryFilter("AutoScorePosted", 0, "latest");
+console.log("Phase2:", { autoBP, humanBP, weightBP });
+[autoBP, humanBP, weightBP] = await rm.getReputationBP(id);
+// read again + show events
+await (await rm.connect(signer1).postAutoScore(id, 7600)).wait();
+if (!(await rm.hasRole(ORACLE_ROLE, signer1.address))) { await (await rm.grantRole(ORACLE_ROLE, signer1.address)).wait(); }
+// grant role to signer1, then signer1 posts another score
+const [_, signer1] = await ethers.getSigners();
+console.log("Phase1:", { autoBP, humanBP, weightBP });
+let [autoBP, humanBP, weightBP] = await rm.getReputationBP(id);
+// read back (autoBP, humanBP, weightBP)
+await (await rm.postAutoScore(id, 7800)).wait();
+if (!(await rm.hasRole(ORACLE_ROLE, signer0.address))) { await (await rm.grantRole(ORACLE_ROLE, signer0.address)).wait(); }
+const ORACLE_ROLE = await rm.ORACLE_ROLE();
+const [signer0] = await ethers.getSigners();
+// grant ORACLE_ROLE to our signer if needed, then post auto score 78.00% (7800 BP)
+const id = ethers.encodeBytes32String("1");
+// model id is bytes32; use a string tag "1"
+const rm = await ethers.getContractAt("ReputationManager", process.env.REP_ADDR);
+} catch {}
+  console.log("Emitted events so far:", [...names].join(", ") || "(none)");
+  const names = new Set(logs.map(l => l.fragment?.name).filter(Boolean));
+  const logs = await rm.queryFilter("*", 0, "latest");
+try {
+// Show any human feedback-ish events if present
+}
+  console.log("After ZK submit -> autoBP=%s humanBP=%s weightBP=%s", autoBP, humanBP, weightBP);
+  const [autoBP, humanBP, weightBP] = await rm.getReputationBP(id);
+if (rm.getReputationBP) {
+// Read back reputation if a reader exists
+if (!sent) console.log("No submit* variant accepted the arguments.");
+}
+  }
+    }
+      } catch (e3) {}
+        sent = true; break;
+        console.log("SUCCESS with", fn.name, "(a,b,c,input,id,rating,commitment)");
+        await tx.wait();
+        const tx = await rm[fn.name](a, b, c, input, id, rating, commitment);
+        // Variant 3: (a,b,c,input, modelId, rating, commitment) // reordered
+      try {
+    } catch (e2) {
+      sent = true; break;
+      console.log("SUCCESS with", fn.name, "(id,rating,a,b,c,input)");
+      await tx.wait();
+      const tx = await rm[fn.name](id, rating, a, b, c, input);
+      // Variant 2: (modelId, rating, a,b,c,input)  // no commitment
+    try {
+  } catch (e1) {
+    sent = true; break;
+    console.log("SUCCESS with", fn.name, "(id,rating,commitment,a,b,c,input)");
+    await tx.wait();
+    const tx = await rm[fn.name](id, rating, commitment, a, b, c, input);
+    // Variant 1: (modelId, rating, commitment, a,b,c,input)
+  try {
+for (const fn of submitFns) {
+let sent = false;
+// Try common argument orderings
+console.log("Submit candidates:\n", submitFns.map(f => f.format()).join("\n"));
+// Show what we’ll try
+  .filter(f => f.type === "function" && /submit/i.test(f.name));
+const submitFns = rm.interface.fragments
+// Find candidate "submit*" functions
+} catch { /* role-less variant is fine too */ }
+  }
+    }
+      console.log("Granted ORACLE_ROLE to", signer0.address);
+      await (await rm.grantRole(ORACLE_ROLE, signer0.address)).wait();
+    if (!(await rm.hasRole(ORACLE_ROLE, signer0.address))) {
+    const ORACLE_ROLE = await rm.ORACLE_ROLE();
+  if (rm.ORACLE_ROLE) {
+  const [signer0] = await ethers.getSigners();
+try {
+// If AccessControl is present, grant role to our signer
+const a=[0n,0n], b=[[0n,0n],[0n,0n]], c=[0n,0n], input=Array(10).fill(0n);
+const commitment= ethers.ZeroHash;                   // bytes32 (use keccak256(evidence_bytes) in Phase 5)
+const rating    = 80;                                // uint8  (0..100)
+const id        = ethers.encodeBytes32String("1");   // bytes32 model id
+// Demo inputs (ZoKrates/Groth16-shape)
+console.log("\nEvents:\n", evs.join("\n"));
+console.log("Functions:\n", fns.join("\n"));
+const evs = rm.interface.fragments.filter(f => f.type === "event").map(e => e.format());
+const fns = rm.interface.fragments.filter(f => f.type === "function").map(f => f.format());
+// List functions and events so we know the *actual* names
+const rm = await ethers.getContractAt("ReputationWithZK", process.env.REP_ADDR);
+// Attach to the ZK contract you just deployed
+sed -i '/^VERIFIER_ADDR=/d' .env; echo "VERIFIER_ADDR=$VERIFIER_ADDR" >> .env
+sed -i '/^REP_ADDR=/d' .env;      echo "REP_ADDR=$REP_ADDR" >> .env
+# Persist to .env for scripts
+export VERIFIER_ADDR=0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6
+export REP_ADDR=0x8A791620dd6260079BF849Dc5567aDC3F2FdC318
+# Use the addresses you just printed from the console:
+if (evs.length) console.log("Last:", evs.at(-1).args);
+console.log("HumanFeedback events:", evs.length);
+const evs = await rm.queryFilter("HumanFeedback", 0, "latest");
+}
+  console.log("P3 after ZK -> autoBP=%s humanBP=%s weightBP=%s", autoBP, humanBP, weightBP);
+  const [autoBP, humanBP, weightBP] = await rm.getReputationBP(id);
+if (rm.getReputationBP) {
+// Read back (the read getters may differ by contract; try the ones you have)
+await (await rm.submitHumanFeedbackZK(id, rating, commitment, a, b, c, input)).wait();
+const commitment = ethers.ZeroHash;
+const rating = 80;
+// rating is 0..100; commitment is bytes32 (use an actual commitment in prod; ZeroHash for demo)
+// IMPORTANT: your ABI shows (bytes32 modelId, uint8 rating, bytes32 commitment, ...)
+}
+  }
+    await (await rm.grantRole(ORACLE_ROLE, signer0.address)).wait();
+  if (!(await rm.hasRole(ORACLE_ROLE, signer0.address))) {
+  const ORACLE_ROLE = await rm.ORACLE_ROLE();
+if (rm.ORACLE_ROLE) {
+const [signer0] = await ethers.getSigners();
+// Roles (if your contract uses AccessControl)
+const input = Array(10).fill(0n);
+const c = [0n, 0n];
+const b = [[0n, 0n],[0n, 0n]];
+const a = [0n, 0n];
+// Groth16/ZoKrates shapes (must match your MockVerifier: a[2], b[2][2], c[2], input[10])
+const id = ethers.encodeBytes32String("1");
+const rm = await ethers.getContractAt("ReputationWithZK", process.env.REP_ADDR);
+.exit
+// 3) Save addrs to your .env (you will do this in bash after exiting the console)
+console.log("ReputationWithZK:", REP);
+const REP = await rmZK.getAddress();
+await rmZK.waitForDeployment();
+const rmZK = await ZK.deploy(await verifier.getAddress());
+const ZK = await ethers.getContractFactory("ReputationWithZK");
+// If your repo’s ZK contract is named ReputationWithZK, use that:
+// 2) Deploy the ZK-capable manager that actually implements submitHumanFeedbackZK
+console.log("Verifier:", await verifier.getAddress());
+await verifier.waitForDeployment();
+const verifier = await Verifier.deploy();
+const Verifier = await ethers.getContractFactory("MockVerifier");
+// 1) Deploy a verifier (use your MockVerifier for the demo)
+console.log("After signer1 write -> autoBP=%s humanBP=%s weightBP=%s", autoBP, humanBP, weightBP);
+const [autoBP, humanBP, weightBP] = await rm.getReputationBP(id);
+await (await rm.connect(signer1).postAutoScore(id, 7600)).wait();
+}
+  await (await rm.grantRole(ORACLE_ROLE, signer1.address)).wait();
+if (!(await rm.hasRole(ORACLE_ROLE, signer1.address))) {
+// Grant + succeed
+}
+  console.log("OK: signer1 blocked without ORACLE_ROLE");
+} catch {
+  console.log("UNEXPECTED: signer1 wrote without role");
+  await (await rm.connect(signer1).postAutoScore(id, 7500)).wait();
+try {
+// Expect revert (no role)
+const ORACLE_ROLE = await rm.ORACLE_ROLE();
+const [signer0, signer1] = await ethers.getSigners();
+const id = ethers.encodeBytes32String("1");
+const rm = await ethers.getContractAt("ReputationManager", process.env.REP_ADDR);
+if (evs.length) console.log("Last HumanFeedback args:", evs.at(-1).args);
+console.log("HumanFeedback events:", evs.length);
+const evs = await rm.queryFilter("HumanFeedback", 0, "latest");
+console.log("P3 after ZK -> autoBP=%s humanBP=%s weightBP=%s", autoBP, humanBP, weightBP);
+const [autoBP, humanBP, weightBP] = await rm.getReputationBP(id);
+// Read back & show events
+await (await rm.submitHumanFeedbackZK(id, rating, commitment, a, b, c, input)).wait();
+const commitment = ethers.ZeroHash;
+const rating = 80;
+// - commitment: bytes32 (use a real commitment hash in production; ZeroHash is fine for demo)
+// - rating: uint8 (0..100)
+// Call with correct types:
+}
+  await (await rm.grantRole(ORACLE_ROLE, signer0.address)).wait();
+if (!(await rm.hasRole(ORACLE_ROLE, signer0.address))) {
+const ORACLE_ROLE = await rm.ORACLE_ROLE();
+const [signer0] = await ethers.getSigners();
+// Make sure we have ORACLE_ROLE (admin can grant to self)
+const input = Array(10).fill(0n);             // MUST be length 10 (bigints)
+const c = [0n, 0n];
+const b = [[0n, 0n], [0n, 0n]];
+const a = [0n, 0n];
+// ZoKrates-style proof shapes
+const id = ethers.encodeBytes32String("1");   // model "1"
+const rm = await ethers.getContractAt("ReputationManager", process.env.REP_ADDR);
+// Attach & prepare ids
+// console.log(sig);
+// For full detail:
+console.log("inputs:", sig.inputs.map(i => `${i.name||''}:${i.type}`).join(", "));
+console.log("name:", sig.name);
+const sig = rm.interface.getFunction("submitHumanFeedbackZK");
+const rm = await ethers.getContractAt("ReputationManager", process.env.REP_ADDR);
+console.log("After signer1 write -> autoBP=%s humanBP=%s weightBP=%s", autoBP, humanBP, weightBP);
+const [autoBP, humanBP, weightBP] = await rm.getReputationBP(id);
+await (await rm.connect(signer1).postAutoScore(id, 7600)).wait();
+}
+  await (await rm.grantRole(ORACLE_ROLE, signer1.address)).wait();
+if (!(await rm.hasRole(ORACLE_ROLE, signer1.address))) {
+// Grant + succeed
+}
+  console.log("OK: signer1 blocked without ORACLE_ROLE");
+} catch {
+  console.log("UNEXPECTED: signer1 wrote without role");
+  await (await rm.connect(signer1).postAutoScore(id, 7500)).wait();
+try {
+// Expect revert (no role)
+const ORACLE_ROLE = await rm.ORACLE_ROLE();
+const [signer0, signer1] = await ethers.getSigners();
+const id = ethers.encodeBytes32String("1");
+const rm = await ethers.getContractAt("ReputationManager", process.env.REP_ADDR);
+if (evs.length) console.log("Last HumanFeedback args:", evs.at(-1).args);
+console.log("HumanFeedback events:", evs.length);
+const evs = await rm.queryFilter("HumanFeedback", 0, "latest");
+console.log("P3 after ZK -> autoBP=%s humanBP=%s weightBP=%s", autoBP, humanBP, weightBP);
+const [autoBP, humanBP, weightBP] = await rm.getReputationBP(id);
+// Read back and show the HumanFeedback event
+await (await rm.submitHumanFeedbackZK(id, 80, 10, a, b, c, input)).wait();
+// Example: 80% rating with 10% weight.
+// IMPORTANT: rating/weight are PERCENT (0-100), not basis points.
+}
+  await (await rm.grantRole(ORACLE_ROLE, signer0.address)).wait();
+if (!(await rm.hasRole(ORACLE_ROLE, signer0.address))) {
+const ORACLE_ROLE = await rm.ORACLE_ROLE();
+const [signer0] = await ethers.getSigners();
+// Ensure we have ORACLE_ROLE
+const input = Array(10).fill(0n);
+const c = [0n, 0n];
+const b = [[0n, 0n], [0n, 0n]];
+const a = [0n, 0n];
+// mock Groth16 proof shapes + REQUIRED input[10]
+const id = ethers.encodeBytes32String("1");
+const rm = await ethers.getContractAt("ReputationManager", process.env.REP_ADDR);
+// === Phase 3: ZK submit with ZoKrates-style inputs ===
+node -e 'const fs=require("fs"); const {keccak256,toUtf8Bytes}=require("ethers"); const b=fs.readFileSync("evidence.json"); console.log("keccak256(bytes) =", keccak256(b)); console.log("keccak256(utf8)  =", keccak256(toUtf8Bytes(fs.readFileSync("evidence.json","utf8"))));'
+curl http://127.0.0.1:8081/ipfs/$CID   # should echo the JSON bytes
+echo "CID=$CID"
+CID=$(ipfs add -q evidence.json | tail -1)
+# You already created evidence.json and added to IPFS, so:
+console.log("after:", autoBP, humanBP, weight);
+const [autoBP, humanBP, weight] = await rm.getReputationBP(id);
+await (await rm.connect(signer1).postAutoScore(id, 7600)).wait();
+}
+  await (await rm.grantRole(ORACLE_ROLE, signer1.address)).wait();
+if (!(await rm.hasRole(ORACLE_ROLE, signer1.address))) {
+// Grant role and succeed
+}
+  console.log("OK: signer1 blocked without ORACLE_ROLE");
+} catch (e) {
+  console.log("UNEXPECTED: signer1 wrote without role");
+  await (await rm.connect(signer1).postAutoScore(id, 7500)).wait();
+try {
+// Expect revert without role (wrap all in a single try/catch block)
+const ORACLE_ROLE = await rm.ORACLE_ROLE();
+const [signer0, signer1] = await ethers.getSigners();
+const id = ethers.encodeBytes32String("1");
+const rm = await ethers.getContractAt("ReputationManager", process.env.REP_ADDR);
+if (evs.length) console.log("last event args:", evs[evs.length-1].args);
+console.log("HumanFeedback count:", evs.length);
+const evs = await rm.queryFilter("HumanFeedback", 0, "latest");
+// Show latest HumanFeedback event
+console.log("P3 after ZK:", autoBP, humanBP, weight);
+const [autoBP, humanBP, weight] = await rm.getReputationBP(id);
+// Read back
+await (await rm.submitHumanFeedbackZK(id, 8000, 1000, a, b, c, input)).wait();
+// ZK submit (human=8000 BP, weight=1000 BP)
+}
+  await (await rm.grantRole(ORACLE_ROLE, signer0.address)).wait();
+if (!(await rm.hasRole(ORACLE_ROLE, signer0.address))) {
+const ORACLE_ROLE = await rm.ORACLE_ROLE();
+const [signer0] = await ethers.getSigners();
+// Make sure we have ORACLE_ROLE
+const input = Array(10).fill(0n);
+const c = [0n, 0n];
+const b = [[0n, 0n], [0n, 0n]];
+const a = [0n, 0n];
+// Groth16 mock shapes, ZoKrates-style input[10]
+const id = ethers.encodeBytes32String("1");
+const rm = await ethers.getContractAt("ReputationManager", process.env.REP_ADDR);
+console.log("P3 after ZK:", autoBP, humanBP, weight);
+const [autoBP,humanBP,weight] = await rm.getReputationBP(id);
+await (await rm.submitHumanFeedbackZK(id, 8000, 1000, a,b,c,input)).wait();
+const a=[0n,0n], b=[[0n,0n],[0n,0n]], c=[0n,0n], input=[0n]; // mock Groth16 shapes
+const id = ethers.encodeBytes32String("1");
+const rm = await ethers.getContractAt("ReputationManager", process.env.REP_ADDR);
+console.log("AutoScorePosted count:", evs.length);
+const evs = await rm.queryFilter("AutoScorePosted", 0, "latest");
+await (await rm.connect(signer1).postAutoScore(id, 7600)).wait();
+}
+  await (await rm.grantRole(ORACLE_ROLE, signer1.address)).wait();
+if (!(await rm.hasRole(ORACLE_ROLE, signer1.address))) {
+// Grant and write succeeds
+} catch { console.log("OK: signer1 blocked without ORACLE_ROLE"); }
+  console.log("unexpected write");
+  await (await rm.connect(signer1).postAutoScore(id, 7500)).wait();
+try {
+// Expect revert without role
+const ORACLE_ROLE = await rm.ORACLE_ROLE();
+const [signer0, signer1] = await ethers.getSigners();
+const id = ethers.encodeBytes32String("1");
+const rm = await ethers.getContractAt("ReputationManager", process.env.REP_ADDR);
+console.log("P1 after:", autoBP, humanBP, weight);
+[autoBP,humanBP,weight] = await rm.getReputationBP(id);
+await (await rm.postAutoScore(id, 7800)).wait();
+}
+  await (await rm.grantRole(ORACLE_ROLE, signer0.address)).wait();
+if (!(await rm.hasRole(ORACLE_ROLE, signer0.address))) {
+const ORACLE_ROLE = await rm.ORACLE_ROLE();
+const [signer0] = await ethers.getSigners();
+console.log("P1 before:", autoBP, humanBP, weight);
+let [autoBP,humanBP,weight] = await rm.getReputationBP(id);
+const id = ethers.encodeBytes32String("1"); // bytes32 model id
+const rm = await ethers.getContractAt("ReputationManager", process.env.REP_ADDR);
+npx hardhat run scripts/check_verifier.js --network localhost
+export VERIFIER_ADDR=0x5FbDB2315678afecb367f032d93F642f64180aa3
+if (!ok) console.log("No verify* function matched this verifier ABI");
+}
+  }
+    break;
+    ok = true;
+    console.log(name, "=>", res);
+    const res = await v[name](a,b,c,input);
+  if (v.interface.getFunction(name)) {
+for (const name of ["verifyProof","verify","verifyTx"]) {
+let ok = false;
+// Try common names
+const input = [0n];
+const c = [0n, 0n];
+const b = [[0n, 0n],[0n, 0n]];
+const a = [0n, 0n];
+// Prepare mock Groth16 shapes
+  .map(f => f.format());
+  .filter(f => f.type === "function")
+v.interface.fragments
+// List available function names (so you can say which one you called)
+}
+  v = await ethers.getContractAt("IVerifier", addr);
+  // Fallback to the generic interface
+} catch (e) {
+  v = await ethers.getContractAt("MockVerifier", addr);
+try {
+let v;
+// Try MockVerifier ABI first
+const addr = process.env.VERIFIER_ADDR; // 0x5FbD...0aa3
+console.log("ZK read: autoBP=%s humanBP=%s weight=%s", autoBP, humanBP, weight);
+const [autoBP, humanBP, weight] = await rm.getReputationBP(id);
+const id = ethers.encodeBytes32String("1");
+const rm = await ethers.getContractAt("ReputationManager", process.env.REP_ADDR);
+}
+  console.log("last event args:", last.args);
+  const last = events[events.length - 1];
+if (events.length) {
+console.log("AutoScorePosted count:", events.length);
+const events = await rm.queryFilter("AutoScorePosted", 0, "latest");
+// 5) Show recent AutoScorePosted events
+console.log("after: autoBP=%s humanBP=%s weight=%s", autoBP, humanBP, weight);
+const [autoBP, humanBP, weight] = await rm.getReputationBP(id);
+// 4) Read back
+console.log("signer1 wrote successfully");
+await (await rm1.postAutoScore(id, 7600)).wait();
+const rm1 = rm.connect(signer1);
+// 3) Now signer1 CAN write
+}
+  console.log("Granted ORACLE_ROLE to", signer1.address);
+  await (await rm.grantRole(ORACLE_ROLE, signer1.address)).wait();
+if (!(await rm.hasRole(ORACLE_ROLE, signer1.address))) {
+// 2) Grant ORACLE_ROLE to signer1 from signer0 (admin)
+}
+  console.log("OK: signer1 blocked without ORACLE_ROLE");
+} catch (e) {
+  console.log("UNEXPECTED: signer1 was able to write");
+  await (await rm1.postAutoScore(id, 7500)).wait();
+  const rm1 = rm.connect(signer1);
+try {
+// 1) Show that signer1 (no role) CANNOT write (expect revert)
+const ORACLE_ROLE = await rm.ORACLE_ROLE();
+const [signer0, signer1] = await ethers.getSigners();
+// Roles & signers
+const id = ethers.encodeBytes32String("1");
+const rm = await ethers.getContractAt("ReputationManager", process.env.REP_ADDR);
+// Attach to Manager and prepare a bytes32 model id
+console.log("verifier:", await rm.verifier());
+// Sanity: see the verifier addr (MockVerifier from your deploy)
+console.log("after : autoBP=%s humanBP=%s weight=%s", autoBP, humanBP, weight);
+[autoBP, humanBP, weight] = await rm.getReputationBP(id);
+// Read again
+await (await rm.postAutoScore(id, 7800)).wait();
+// Write: post 78.00% = 7800 BP
+}
+  console.log("granted ORACLE_ROLE to", signer0.address);
+  await (await rm.grantRole(ORACLE_ROLE, signer0.address)).wait();
+if (!(await rm.hasRole(ORACLE_ROLE, signer0.address))) {
+const ORACLE_ROLE = await rm.ORACLE_ROLE();
+const [signer0] = await ethers.getSigners();
+// Ensure ORACLE_ROLE for our signer
+console.log("before: autoBP=%s humanBP=%s weight=%s", autoBP, humanBP, weight);
+let [autoBP, humanBP, weight] = await rm.getReputationBP(id);
+// Read current reputation (Basis Points) for model "1"
+const id2 = ethers.zeroPadValue(ethers.toBeHex(1), 32);
+// OPTION B: bytes32 from an integer (1 -> 0x...01 padded to 32 bytes)
+const id = ethers.encodeBytes32String("1");   // v6 API
+// OPTION A: bytes32 from a string tag (e.g., "1")
+const rm = await ethers.getContractAt("ReputationManager", addr);
+const addr = process.env.REP_ADDR;
+// Attach to your deployed ReputationManager
+console.log("verifier:", await rm.verifier());
+// Show verifier address the Manager uses (should be MockVerifier from your deploy logs)
+console.log("after : autoBP=%s humanBP=%s weight=%s", autoBP, humanBP, weight);
+[autoBP, humanBP, weight] = await rm.getReputationBP(1);
+// Read again
+await tx2.wait();
+const tx2 = await rm.postAutoScore(1, 7800);
+// Post an auto score (e.g., 78.00% = 7800 BP) for modelId=1
+}
+  console.log("granted ORACLE_ROLE to", signer0.address);
+  await tx.wait();
+  const tx = await rm.grantRole(ORACLE_ROLE, signer0.address);
+if (!has) {
+console.log("oracle role signer0?", has);
+const has = await rm.hasRole(ORACLE_ROLE, signer0.address);
+const ORACLE_ROLE = await rm.ORACLE_ROLE();
+const [signer0, signer1] = await ethers.getSigners();
+// Check roles and grant ORACLE_ROLE to default signer if needed
+console.log("before: autoBP=%s humanBP=%s weight=%s", autoBP, humanBP, weight);
+let [autoBP, humanBP, weight] = await rm.getReputationBP(1);
+// Read current reputation in basis points (BP) for modelId=1
+const rm = await ethers.getContractAt("ReputationManager", addr);
+const addr = process.env.REP_ADDR;
+// Attach to the deployed ReputationManager
+}
+  } catch (e) { /* ignore */ }
+    console.log(name, "=>", r);
+    const r = await rm[fn.name]();
+    const fn = rm.getFunction(name);
+  try {
+for (const name of candidates) {
+];
+  "getReputation", "getReputationAddress", "reputationAddr"
+  "reputation", "reputationContract", "rep", 
+const candidates = [
+  .map(f => f.format())
+  .filter(f => f.type === "function")
+rm.interface.fragments
+const rm = await ethers.getContractAt("ReputationManager", addr);
+const addr = process.env.REP_ADDR;  // 0xe7f1...0512
+});
+  uri: s.evidenceURI
+  w: s.weight.toString(),
+  human: s.humanScore.toString(),
+  auto: s.autoScore.toString(),
+  rep: rep.toString(),
+console.log({
+const rep = await rm.reputation(1);
+const s = await rm.rawScores(1);
+// Try modelId = 1
+const rm = await ethers.getContractAt("ReputationManager", addr);
+const addr = process.env.REP_ADDR;           // should be 0xe7f1...0512
+console.log({rep: rep.toString(), auto: s.autoScore.toString(), human: s.humanScore.toString(), w: s.weight.toString(), uri: s.evidenceURI});
+const rep = await rm.reputation(1);
+const s = await rm.rawScores(1);
+// Try modelId 1
+const rm = await ethers.getContractAt("ReputationManager", addr);
+const addr = process.env.REP_ADDR;
