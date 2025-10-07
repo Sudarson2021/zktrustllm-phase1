@@ -9,7 +9,7 @@ __pycache__/
 *.pyc
 
 # Local services / caches
-.ollama/           # if you ever bind a local cache here
+.ollama/                 # if you ever bind a local cache here
 outputs_openai/
 outputs_ollama/
 .ipynb_checkpoints/
@@ -17,12 +17,11 @@ outputs_ollama/
 # Hardhat/coverage
 cache/
 artifacts/
-coverage/
-
-# Env / keys
-.env
-.env.local
-.env.*.local
 
 # IPFS local repo (don’t commit)
 .ipfs/
+
+# Env files
+.env
+.env.local
+.env.*.local
