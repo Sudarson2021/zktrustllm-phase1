@@ -25,3 +25,13 @@ artifacts/
 .env
 .env.local
 .env.*.local
+
+# Bench & evidence
+outputs_openai/*.ndjson
+outputs_openai/*.txt
+
+# Bench & evidence
+outputs_openai/*.ndjson
+outputs_openai/*.txt
+outputs_openai/*.csv
+outputs_openai/*.md
