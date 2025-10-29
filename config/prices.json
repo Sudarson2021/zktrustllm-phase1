@@ -1,0 +1,5 @@
+{
+  "gpt-5":       { "prompt_per_1k_usd": 0.00, "completion_per_1k_usd": 0.00 },
+  "gpt-4o-mini": { "prompt_per_1k_usd": 0.00, "completion_per_1k_usd": 0.00 },
+  "local-mini":  { "prompt_per_1k_usd": 0.00, "completion_per_1k_usd": 0.00 }
+}

@@ -35,3 +35,32 @@ outputs_openai/*.ndjson
 outputs_openai/*.txt
 outputs_openai/*.csv
 outputs_openai/*.md
+# node / hardhat
+node_modules/
+cache/
+artifacts/
+typechain*/
+coverage/
+*.tsbuildinfo
+
+# local configs/keys/secrets
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.crt
+*.csr
+scripts/.addr.localhost.json
+zktrustllm_tenants/scripts/.tenants.localhost.json
+
+# outputs you don't want to version (keep CSV/figs if you want)
+outputs_openai/*.ndjson
+outputs_openai/*.txt
+# keep reports:
+!outputs_openai/bench.csv
+!outputs_openai/bench_report.md
+
+# OS/editor noise
+.DS_Store
+*.swp

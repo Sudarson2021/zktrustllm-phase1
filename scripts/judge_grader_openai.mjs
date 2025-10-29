@@ -51,7 +51,7 @@ for await (const line of rl) {
   if (!line.trim()) continue;
   const row = JSON.parse(line);
   const r = await client.chat.completions.create({
-    model: MODEL, temperature: 0, messages: rubricPrompt(row)
+    model: MODEL, messages: rubricPrompt(row)
   });
   const js = extractJSON(r.choices[0]?.message?.content || "");
   js.score = Math.max(0, Math.min(100, Math.round(js.score ?? 0)));

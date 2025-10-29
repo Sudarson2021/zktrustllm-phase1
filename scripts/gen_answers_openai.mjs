@@ -47,7 +47,7 @@ function freeformPrompt(q, context) {
 }
 
 async function ask(messages) {
-  const resp = await client.chat.completions.create({ model: MODEL, temperature: 0, messages });
+  const resp = await client.chat.completions.create({ model: MODEL, messages });
   return resp.choices[0]?.message?.content?.trim() ?? "";
 }
 

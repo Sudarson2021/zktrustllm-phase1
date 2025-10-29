@@ -23,7 +23,7 @@ function mcPrompt(q, options) {
   ];
 }
 async function ask(messages) {
-  const r = await client.chat.completions.create({ model: MODEL, temperature: 0, messages });
+  const r = await client.chat.completions.create({ model: MODEL, messages });
   return r.choices[0]?.message?.content?.trim() ?? "";
 }
 function extractLetter(s, K) {

@@ -9,10 +9,14 @@
     "demo": "hardhat run scripts/demo.js --network localhost",
     "gen:mmlu": "MODEL=${MODEL:-gpt-5} DATA=data/mmlu_dev.jsonl OUT=outputs_openai/mmlu_answers.jsonl node scripts/gen_answers_openai.mjs",
     "score:mmlu": "node scripts/score_mcq.js --file outputs_openai/mmlu_answers.jsonl",
-    "evidence:mmlu": "node -e \"const fs=require('fs'); fs.writeFileSync('outputs_openai/evidence_openai.json', JSON.stringify({model:'gpt-4o-mini',temperature:0,dataset:'data/mmlu_dev.jsonl',answers:'outputs_openai/mmlu_answers.jsonl',metric:'accuracy',protocol:'MCQ letter-only',timestamp:new Date().toISOString()},null,2))\"",
+    "evidence:mmlu": "node -e \"const fs=require('fs'); fs.writeFileSync('outputs_openai/evidence_openai.json', JSON.stringify({model:(process.env.MODEL||'gpt-5'),dataset:'data/mmlu_dev.jsonl',answers:'outputs_openai/mmlu_answers.jsonl',metric:'accuracy',protocol:'MCQ letter-only',timestamp:new Date().toISOString()},null,2))\"",
     "ipfs:mmlu": "ipfs add -q outputs_openai/evidence_openai.json",
     "phase5:submit": "RATING=${RATING:-80} WEIGHT=100 EVIDENCE=outputs_openai/evidence_openai.json npx hardhat run scripts/zk_submit_with_evidence.js --network localhost",
-    "phase5:report": "npx hardhat run scripts/report.js --network localhost"
+    "phase5:report": "npx hardhat run scripts/report.js --network localhost",
+    "bench:run": "node scripts/bench_many.mjs > outputs_openai/bench.ndjson",
+    "bench:csv": "node scripts/bench_to_csv.mjs outputs_openai/bench.ndjson outputs_openai/bench.csv",
+    "bench:md": "node scripts/report_markdown.mjs outputs_openai/bench.ndjson outputs_openai/bench_report.md",
+    "pipeline": "bash scripts/run_pipeline.sh"
   },
   "keywords": [],
   "author": "",

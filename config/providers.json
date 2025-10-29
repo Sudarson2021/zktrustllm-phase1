@@ -1,0 +1,17 @@
+{
+  "gpt-5": {
+    "baseURL": "https://api.openai.com/v1",
+    "apiKeyEnv": "OPENAI_API_KEY",
+    "project": "proj_nTepncicrn19SHH0p7An5YvH"   // optional
+  },
+
+  "gpt-4o-mini": {
+    "baseURL": "https://api.openai.com/v1",
+    "apiKeyEnv": "OPENAI_API_KEY"
+  },
+
+  "local-mini": {
+    "baseURL": "http://127.0.0.1:39699/v1",
+    "apiKeyEnv": "LOCAL_API_KEY"
+  }
+}
