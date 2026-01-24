@@ -64,3 +64,12 @@ outputs_openai/*.txt
 # OS/editor noise
 .DS_Store
 *.swp
+
+# Local release bundles (do not commit)
+SHA256SUMS
+*.tar.gz
+
+# Local-only outputs
+local_bundles/
+SHA256SUMS
+*.tar.gz
