@@ -1,13 +1,28 @@
-# Sample Hardhat Project
+# ZKTrustLLM — Artifact & Prototype (Phase 1–5)
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a Hardhat Ignition module that deploys that contract.
+Prototype + artifacts for **ZKTrustLLM: IPFS-Anchored Zero-Knowledge Accountability for Secure 5G Edge Multicast**.
 
-Try running some of the following tasks:
+## Clarifications (addresses ICC reviewer concerns)
+- IPFS is NOT used for live video streaming. IPFS stores audit evidence objects; the live media path remains DTLS/RTP/multicast.
+- CID = Content Identifier (content-address for evidence in IPFS).
+- ZK = Zero-Knowledge proof attesting properties about (score, evidence commitment, context) without revealing sensitive evidence.
 
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat ignition deploy ./ignition/modules/Lock.js
-```
+## Reproduce / collect artifacts
+Run:
+  bash scripts/reproduce_all.sh
+
+Outputs are collected under:
+  artifacts/out/
+
+## Baselines (comparisons)
+Run:
+  bash scripts/baselines/run_oracle_only.sh
+  bash scripts/baselines/run_no_ipfs.sh
+
+## Paper ↔ Code mapping
+See:
+  ARTIFACTS.md
+
+## Scoring model
+See:
+  docs/scoring.md
